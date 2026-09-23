@@ -1,0 +1,26 @@
+# ---- 环境 ----
+# conda 环境在项目外（~/miniconda3/envs/windmill），此处仅防手误在项目内建 venv
+windmill/
+.venv/
+__pycache__/
+*.pyc
+
+# ---- 输入素材（原始视频，已在交付工程 vision_training 保留）----
+resources/*.mp4
+
+# ---- 数据集 ----
+# 原始帧与切分后的图片体积大，不提交；labels/ 保留标注成果（提交）
+dataset/raw/
+dataset/images/
+
+# ---- 训练产物与权重（二进制，不提交）----
+runs/
+export/
+*.pt
+*.onnx
+*.zip
+*.log
+
+# ---- 系统 ----
+.DS_Store
+.vscode/

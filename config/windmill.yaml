@@ -1,0 +1,9 @@
+# ultralytics 训练数据配置（train.py 的 data 参数指向本文件）
+# 训练时从项目根目录运行，path 相对项目根目录。
+path: dataset
+train: images/train
+val: images/val
+
+names:
+  0: R
+  1: target

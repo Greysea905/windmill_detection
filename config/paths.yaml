@@ -1,0 +1,22 @@
+# 全局路径与参数（extract / split / train 脚本共读）
+videos:
+  task_3: resources/task_3.mp4
+  task_4: resources/task_4.mp4
+
+extract:
+  step: 3              # 抽帧步长（每 step 帧抽 1 张）
+  out_dir: dataset/raw # 抽帧落点，按视频分子目录
+
+split:
+  val_ratio: 0.2       # 每个视频后 20% 帧作验证（按时间顺序切，避免相邻帧泄漏）
+
+model:
+  name: yolo11n        # YOLOv11 nano
+  imgsz: 1280          # 训练/导出/推理统一输入尺寸（全帧训练，目标小需高分辨率）
+  epochs: 100
+  batch: 16
+  device: cpu          # 本地用 cpu；AutoDL 上改 0
+
+classes:
+  0: R        # 中心 R 标（每帧 1 个，框要框紧，其中心即旋转中心）
+  1: target   # 有效目标扇叶（小机关 <=1，大机关 <=2）
