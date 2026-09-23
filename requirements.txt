@@ -1,0 +1,12 @@
+# 训练/标注依赖清单（pip install -r requirements.txt）
+# 注意：torch / torchvision 需单独装（CPU/GPU 二选一），勿放此文件，否则会误装 CUDA 版。
+#   安装见 README「环境」一节。
+# 本仓库实测版本：ultralytics 8.4.160 / labelimg 1.8.6 / onnx 1.23.0 / onnxruntime 1.23.2
+
+ultralytics
+labelimg
+onnx
+onnxruntime
+opencv-python
+numpy
+pyyaml

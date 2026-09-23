@@ -2,7 +2,7 @@
 
 用来进行 RoboMaster 能量机关（风车）目标检测模型的训练。
 
-产出 YOLOv11n 的 ONNX 权重，交给交付工程 [`vision_training`](../vision_training)（C++ + OpenCV）做实时识别与稳定跟踪。
+产出 YOLOv11n 的 ONNX 权重，交给 vision_training（C++ + OpenCV）做实时识别与稳定跟踪。
 
 ---
 
@@ -106,7 +106,7 @@ windmill_detection/
   conda create -n windmill python=3.10 -y
   conda activate windmill
   pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
-  pip install ultralytics labelimg onnx onnxruntime
+  pip install -r requirements.txt   # 依赖清单见 requirements.txt
   ```
 - 注意：若 `~/.local` 有杂包会泄漏，可用 `conda env config vars set PYTHONNOUSERSITE=1 -n windmill` 隔离。
 
